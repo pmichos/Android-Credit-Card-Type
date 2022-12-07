@@ -178,6 +178,13 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4427800000000029").name)
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4046327300000000").name)
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4414540100000000").name)
+
+        // UL Kernel ids
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4761730000000011").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4761730000000029").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4427800000000029").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4046327300000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4414540100000000").kernelId)
     }
 
     @Test
@@ -188,6 +195,13 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ELECTRON_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4268690100000000").name)
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ELECTRON_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4103590100000000").name)
         assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ELECTRON_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4314040100000000").name)
+
+        // Kernel ids
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4970492200000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4168437300000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4268690100000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4103590100000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_PAYWAVE_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "4314040100000000").kernelId)
     }
 
     @Test
@@ -199,6 +213,15 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_MASTERCARD_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "2720994753245108").name)
         assertEquals(CardBrandConstants.KERNEL_MASTERCARD_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5299280211777880").name)
         assertEquals(CardBrandConstants.KERNEL_MASTERCARD_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "2221004151714145").name)
+
+        // Kernel ids
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5555555555554444").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5454545454545454").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5167320000000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5458650000000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "2720994753245108").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5299280211777880").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "2221004151714145").kernelId)
     }
 
     @Test
@@ -216,6 +239,15 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_MAESTRO_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5600000000000000").name)
         assertEquals(CardBrandConstants.KERNEL_MAESTRO_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "6700000000000000").name)
         assertEquals(CardBrandConstants.KERNEL_MAESTRO_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "6390000000000000").name)
+
+        // Kernel ids
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "676315607405466").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5893438308485128").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5020238298830887").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "6759553351590532").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "5600000000000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "6700000000000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_MASTERCARD_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "6390000000000000").kernelId)
     }
 
     @Test
@@ -230,6 +262,13 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_DPAS_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "36340020351845").name)
         assertEquals(CardBrandConstants.KERNEL_DPAS_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "36236350464440").name)
         assertEquals(CardBrandConstants.KERNEL_DPAS_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "30036592321275").name)
+
+        // Kernel ids
+        assertEquals(CardBrandConstants.KERNEL_DPAS_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "38000000000000").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_DPAS_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3634236958352038838").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_DPAS_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "36340020351845").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_DPAS_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "36236350464440").kernelId)
+        assertEquals(CardBrandConstants.KERNEL_DPAS_ID, CreditCardTypeManager.getInstance().detect(cardNumberInput = "30036592321275").kernelId)
     }
 
     @Test
