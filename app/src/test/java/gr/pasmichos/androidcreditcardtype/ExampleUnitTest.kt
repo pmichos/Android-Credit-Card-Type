@@ -233,6 +233,16 @@ class ExampleUnitTest {
     }
 
     @Test
+    fun addition_isCorrectJCB() {
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3528419104243638").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3549542117732712").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3538626908566596").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3588842850113886").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3529014937618855").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CreditCardTypeManager.getInstance().detect(cardNumberInput = "3549198175577539").name)
+    }
+
+    @Test
     fun addition_isCorrectElo() {
         assertEquals("ELO", CreditCardTypeManager.getInstance().detect(cardNumberInput = "6505602939658753").name)
         assertEquals("ELO", CreditCardTypeManager.getInstance().detect(cardNumberInput = "431274775578248").name)

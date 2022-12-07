@@ -20,6 +20,7 @@ object CardBrandConstants {
     const val KERNEL_DPAS_NAME = "DINERS"
     const val KERNEL_DPAS_ID = 4
 
+    const val KERNEL_JCB_NAME = "JCB"
     const val KERNEL_JCB_ID = 5
 
     // UPI
