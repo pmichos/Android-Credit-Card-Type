@@ -27,7 +27,7 @@ object SearchByCardNumber {
 
                             //Log.i("CreditCardTypeManager", "cardBrand - name=[${cardBrand.cardName}] - matches=[${matches}] pattern.length=[${patternInRange.toString().length}]")
 
-                            cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, listOf(), listOf(), patternInRange.toString().length))
+                            cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, cardBrand.kernelId, listOf(), listOf(), patternInRange.toString().length))
                         }
 
                     } else {
@@ -39,7 +39,7 @@ object SearchByCardNumber {
 
                         //Log.i("CreditCardTypeManager", "cardBrand - name=[${cardBrand.cardName}] - matches=[${matches}] pattern.length=[${pattern.length}]")
 
-                        cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, listOf(), listOf(), pattern.length))
+                        cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, cardBrand.kernelId, listOf(), listOf(), pattern.length))
                     }
                 }
             }
@@ -56,7 +56,7 @@ object SearchByCardNumber {
         } else if (listOfCardBrands.size == 1) {
             return listOfCardBrands[0]
         } else { // Unknown
-            return CardBrand("UNKNOWN", "UNKNOWN", listOf(), listOf(), 0)
+            return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(), 0)
         }
     }
 

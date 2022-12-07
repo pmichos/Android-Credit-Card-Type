@@ -38,13 +38,13 @@ class CreditCardTypeManager {
             for(bin in cardType.bins) {
                 binsPatternList.add(bin)
             }
-            cardBrandList.add(CardBrand(cardType.name, cardType.displayName, aidsPatternList, binsPatternList, 0))
+            cardBrandList.add(CardBrand(cardType.name, cardType.displayName, cardType.kernelId, aidsPatternList, binsPatternList, 0))
         }
     }
 
     fun detect(aid: String = "", cardNumberInput: String = ""): CardBrand {
         if (aid.isEmpty() && cardNumberInput.isEmpty()) {
-            return CardBrand("UNKNOWN", "UNKNOWN", listOf(), listOf(),0)
+            return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(),0)
         }
 
         val cardNumber = cardNumberInput.trim()
