@@ -25,133 +25,35 @@ class CreditCardTypeManager {
 
         //println("jsonTemplate=[${jsonTemplate}]")
 
-        println("found [${cardTypes.cardTypes.size}] cardTypes.")
+        //println("found [${cardTypes.cardTypes.size}] cardTypes.")
         for (cardType in cardTypes.cardTypes) {
             //println("cardType=[${cardType.name}]")
+
+            val aidsPatternList = mutableListOf<String>()
+            for(aid in cardType.aids) {
+                aidsPatternList.add(aid)
+            }
 
             val binsPatternList = mutableListOf<String>()
             for(bin in cardType.bins) {
                 binsPatternList.add(bin)
             }
-            cardBrandList.add(CardBrand(cardType.name, cardType.displayName, binsPatternList, 0))
+            cardBrandList.add(CardBrand(cardType.name, cardType.displayName, cardType.kernelId, aidsPatternList, binsPatternList, 0))
         }
     }
 
-    fun detect(cardNumber: String): CardBrand {
-        //Log.i("CreditCardTypeManager", "detect - cardNumber=[${cardNumber}]")
-
-        val listOfCardBrands = cardBrands(cardNumber)
-        for (cardBrand in listOfCardBrands) {
-            //Log.i("CreditCardTypeManager", "cardBrand - name=[${cardBrand.cardName}]")
+    fun detect(aid: String = "", cardNumberInput: String = ""): CardBrand {
+        if (aid.isEmpty() && cardNumberInput.isEmpty()) {
+            return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(),0)
         }
 
-        // Need to use best match
-        if(listOfCardBrands.size > 1) {
-            val cardBrands = mutableListOf<CardBrand>()
+        val cardNumber = cardNumberInput.trim()
 
-            for (cardBrand in listOfCardBrands) {
-
-                for (pattern in cardBrand.binsPattern) {
-
-                    if(pattern.contains("-")) {
-                        //Log.i("CreditCardTypeManager", "multiple ranges - pattern=[${pattern}]")
-                        val splittedPattern = pattern.split("-")
-                        for(patternInRange in splittedPattern[0].toInt()..splittedPattern[1].toInt()) {
-                            //Log.i("CreditCardTypeManager", "multiple range - patternInRange=[${patternInRange}]")
-
-                            // Process
-                            val matches = matchesPatternLength(cardNumber, patternInRange.toString())
-
-                            if(!matches) {
-                                continue
-                            }
-
-                            //Log.i("CreditCardTypeManager", "cardBrand - name=[${cardBrand.cardName}] - matches=[${matches}] pattern.length=[${patternInRange.toString().length}]")
-
-                            cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, listOf(), patternInRange.toString().length))
-                        }
-
-                    } else {
-                        val matches = matchesPatternLength(cardNumber, pattern)
-
-                        if(!matches) {
-                            continue
-                        }
-
-                        //Log.i("CreditCardTypeManager", "cardBrand - name=[${cardBrand.cardName}] - matches=[${matches}] pattern.length=[${pattern.length}]")
-
-                        cardBrands.add(CardBrand(cardBrand.name, cardBrand.displayName, listOf(), pattern.length))
-                    }
-                }
-            }
-
-            val res = cardBrands.reduce  { acc, cur ->
-                if (acc.strengthMatches < cur.strengthMatches) {
-                    return@reduce cur
-                }
-
-                acc
-            }
-
-            return res
-        } else if (listOfCardBrands.size == 1) {
-            return listOfCardBrands[0]
-        } else { // Unknown
-            return CardBrand("UNKNOWN", "UNKNOWN", listOf(), 0)
+        return if (aid.isNotEmpty()) {
+            SearchByAid.search(aid, cardNumber, cardBrandList)
+        } else { // cardNumber
+            SearchByCardNumber.search(cardNumber, cardBrandList)
         }
-    }
-
-    fun matchesPatternLength(cardNumber: String, pattern: String): Boolean {
-        return pattern == cardNumber.substring(0, pattern.length)
-    }
-
-    fun cardBrands(cardNumber: String): MutableList<CardBrand> {
-
-        val mutableList = mutableListOf<CardBrand>()
-
-        for (cardBrand in cardBrandList) {
-            if(mutableList.contains(cardBrand)) {
-               continue
-            }
-
-            // Patterns
-            for (pattern in cardBrand.binsPattern) {
-
-                // MIN MAX FUNCTIONALITY
-                if(pattern.contains("-")) {
-                    //Log.i("CreditCardTypeManager", "multiple ranges - pattern=[${pattern}]")
-                    val splittedPattern = pattern.split("-")
-                    for(patternInRange in splittedPattern[0].toInt()..splittedPattern[1].toInt()) {
-                        //Log.i("CreditCardTypeManager", "multiple range - patternInRange=[${patternInRange}]")
-
-                        // Process
-                        if(cardNumber.startsWith(patternInRange.toString())) {
-
-                            if(mutableList.contains(cardBrand)) {
-                                continue
-                            }
-
-                            //Log.i("CreditCardTypeManager", "cardNumber in pattern =[${pattern}]")
-                            mutableList.add(cardBrand)
-                        }
-                    }
-
-                } else {
-                    // Process
-                    if(cardNumber.startsWith(pattern)) {
-
-                        if(mutableList.contains(cardBrand)) {
-                            continue
-                        }
-
-                        //Log.i("CreditCardTypeManager", "cardNumber in pattern =[${pattern}]")
-                        mutableList.add(cardBrand)
-                    }
-                }
-            }
-        }
-
-        return mutableList
     }
 
     companion object {
