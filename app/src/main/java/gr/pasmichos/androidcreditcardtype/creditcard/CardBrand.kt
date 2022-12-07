@@ -1,4 +1,3 @@
 package gr.pasmichos.androidcreditcardtype.creditcard
 
-data class CardBrand(var cardName: String, var pattern: List<String>, var matches: Int) {
-}
+data class CardBrand(var name: String, var displayName: String, var binsPattern: List<String>, var strengthMatches: Int)
