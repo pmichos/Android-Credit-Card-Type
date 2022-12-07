@@ -1,16 +1,17 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlinx-serialization'
 }
 
 android {
     namespace 'gr.pasmichos.androidcreditcardtype'
-    compileSdk 33
+    compileSdk 32
 
     defaultConfig {
         applicationId "gr.pasmichos.androidcreditcardtype"
         minSdk 21
-        targetSdk 33
+        targetSdk 32
         versionCode 1
         versionName "0.0.1"
 
@@ -30,6 +31,19 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+    sourceSets {
+        main {
+            assets {
+                srcDirs 'src\\main\\assets'
+            }
+        }
+    }
 }
 
 dependencies {
@@ -39,6 +53,11 @@ dependencies {
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.8'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // KotlinX serialization
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3'
 }
