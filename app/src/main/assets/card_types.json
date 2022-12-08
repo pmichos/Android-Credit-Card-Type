@@ -2,7 +2,7 @@
 	"cardTypes": [
 		{
 			"id": 1,
-			"kernelId": 0,
+			"kernelId": -1,
 			"name": "UNKNOWN",
 			"displayName": "UNKNOWN",
 			"aids": [
@@ -13,37 +13,16 @@
 			]
 		},
 		{
-			"id": 2,
+			"id": 8,
 			"kernelId": 1,
-			"name": "VISA",
-			"displayName": "VISA",
+			"name": "JCB",
+			"displayName": "JCB",
 			"aids": [
-				"A0000000031"
+				"A00000006510",
+				"A0000000651010"
 			],
 			"bins": [
-				"4"
-			]
-		},
-		{
-			"id": 3,
-			"kernelId": 1,
-			"name": "VISA ELECTRON",
-			"displayName": "VISA ELECTRON",
-			"aids": [
-				"A0000000032"
-			],
-			"bins": [
-				"4026",
-				"417500",
-				"4508",
-				"4844",
-				"4913",
-				"416843",
-				"497049",
-				"426868-426869",
-				"410359-410360",
-				"431404-431405",
-				"491730-491754"
+				"3528-3589"
 			]
 		},
 		{
@@ -83,50 +62,42 @@
 			]
 		},
 		{
-			"id": 6,
+			"id": 2,
 			"kernelId": 3,
-			"name": "AMEX",
-			"displayName": "AMEX",
+			"name": "VISA",
+			"displayName": "VISA",
 			"aids": [
-				"A000000025"
+				"A0000000031"
 			],
 			"bins": [
-				"34",
-				"37"
+				"4"
 			]
 		},
 		{
-			"id": 7,
-			"kernelId": 4,
-			"name": "DINERS",
-			"displayName": "DINERS",
+			"id": 3,
+			"kernelId": 3,
+			"name": "VISA ELECTRON",
+			"displayName": "VISA ELECTRON",
 			"aids": [
-				"A0000001523010",
-				"A0000003241010"
+				"A0000000032"
 			],
 			"bins": [
-				"300-305",
-				"3095",
-				"36",
-				"38-39"
-			]
-		},
-		{
-			"id": 8,
-			"kernelId": 5,
-			"name": "JCB",
-			"displayName": "JCB",
-			"aids": [
-				"A00000006510",
-				"A0000000651010"
-			],
-			"bins": [
-				"3528-3589"
+				"4026",
+				"417500",
+				"4508",
+				"4844",
+				"4913",
+				"416843",
+				"497049",
+				"426868-426869",
+				"410359-410360",
+				"431404-431405",
+				"491730-491754"
 			]
 		},
 		{
 			"id": 9,
-			"kernelId": 6,
+			"kernelId": 4,
 			"name": "UPI",
 			"displayName": "UnionPay",
 			"aids": [
@@ -155,6 +126,35 @@
 				"8132-8151",
 				"8152-8163",
 				"8164-8171"
+			]
+		},
+		{
+			"id": 6,
+			"kernelId": 5,
+			"name": "AMEX",
+			"displayName": "AMEX",
+			"aids": [
+				"A000000025"
+			],
+			"bins": [
+				"34",
+				"37"
+			]
+		},
+		{
+			"id": 7,
+			"kernelId": 6,
+			"name": "DINERS",
+			"displayName": "DINERS",
+			"aids": [
+				"A0000001523010",
+				"A0000003241010"
+			],
+			"bins": [
+				"300-305",
+				"3095",
+				"36",
+				"38-39"
 			]
 		},
 		{

@@ -61,7 +61,7 @@ object SearchByAid {
             if (fallbackCardNumber.isNotEmpty()) {
                 return SearchByCardNumber.search(fallbackCardNumber, cardBrandList)
             } else {
-                return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(), 0)
+                return CardBrand("UNKNOWN", "UNKNOWN", -1, listOf(), listOf(), 0)
             }
         }
     }
