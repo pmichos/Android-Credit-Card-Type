@@ -5,7 +5,7 @@ import gr.pasmichos.androidcreditcardtype.creditcard.model.CardTypes
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 
-class CreditCardTypeManager {
+class CardBrandTypeManager {
 
     private val json: Json = Json {
         ignoreUnknownKeys = true
@@ -44,7 +44,7 @@ class CreditCardTypeManager {
 
     fun detect(aid: String = "", cardNumberInput: String = ""): CardBrand {
         if (aid.isEmpty() && cardNumberInput.isEmpty()) {
-            return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(),0)
+            return CardBrand("UNKNOWN", "UNKNOWN", -1, listOf(), listOf(),0)
         }
 
         val cardNumber = cardNumberInput.trim()
@@ -57,11 +57,11 @@ class CreditCardTypeManager {
     }
 
     companion object {
-        @Volatile private var mInstance: CreditCardTypeManager? = null
+        @Volatile private var mInstance: CardBrandTypeManager? = null
 
-        fun getInstance(): CreditCardTypeManager =
+        fun getInstance(): CardBrandTypeManager =
             mInstance ?: synchronized(this) {
-                val newInstance = mInstance ?: CreditCardTypeManager().also { mInstance = it }
+                val newInstance = mInstance ?: CardBrandTypeManager().also { mInstance = it }
                 newInstance
             }
     }

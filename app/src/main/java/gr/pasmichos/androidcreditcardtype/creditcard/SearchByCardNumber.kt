@@ -56,7 +56,7 @@ object SearchByCardNumber {
         } else if (listOfCardBrands.size == 1) {
             return listOfCardBrands[0]
         } else { // Unknown
-            return CardBrand("UNKNOWN", "UNKNOWN", 0, listOf(), listOf(), 0)
+            return CardBrand("UNKNOWN", "UNKNOWN", -1, listOf(), listOf(), 0)
         }
     }
 
