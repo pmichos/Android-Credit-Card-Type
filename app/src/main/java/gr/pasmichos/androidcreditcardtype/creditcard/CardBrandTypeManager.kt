@@ -26,6 +26,7 @@ class CardBrandTypeManager {
         //println("jsonTemplate=[${jsonTemplate}]")
 
         //println("found [${cardTypes.cardTypes.size}] cardTypes.")
+        cardBrandList.clear()
         for (cardType in cardTypes.cardTypes) {
             //println("cardType=[${cardType.name}]")
 
