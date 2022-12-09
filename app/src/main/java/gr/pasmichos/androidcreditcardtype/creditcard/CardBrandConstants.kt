@@ -31,4 +31,6 @@ object CardBrandConstants {
 
     const val KERNEL_INTERAC_NAME = "INTERAC"
     const val KERNEL_INTERAC_ID = 7
+
+    const val KERNEL_DISCOVER_NAME = "DISCOVER"
 }
