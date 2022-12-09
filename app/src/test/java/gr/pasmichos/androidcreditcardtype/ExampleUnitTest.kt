@@ -279,6 +279,18 @@ class ExampleUnitTest {
         assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "3588842850113886").name)
         assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "3529014937618855").name)
         assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "3549198175577539").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "3565599481389304").name)
+        assertEquals(CardBrandConstants.KERNEL_JCB_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "3568956540091342834").name)
+    }
+
+    @Test
+    fun addition_isCorrectDiscover() {
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6011940954634110").name)
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6011352681829940").name)
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6011931020075859").name)
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6440183944176667").name)
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6440183944176667").name)
+        assertEquals(CardBrandConstants.KERNEL_DISCOVER_NAME, CardBrandTypeManager.getInstance().detect(cardNumberInput = "6451946039298448").name)
     }
 
     @Test
