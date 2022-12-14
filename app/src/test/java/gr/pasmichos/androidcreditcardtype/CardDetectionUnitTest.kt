@@ -17,7 +17,7 @@ import org.robolectric.RuntimeEnvironment
  */
 
 @RunWith(RobolectricTestRunner::class)
-class ExampleUnitTest {
+class CardDetectionUnitTest {
 
     @Before
     fun load() {
